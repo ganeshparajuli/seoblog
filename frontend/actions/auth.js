@@ -16,7 +16,7 @@ export const signup = user => {
         })
         .catch(err => console.log(err));
 };
-console.log("api data",`${API}` )
+
 export const signin = user => {
     return fetch(`${API}/signin`, {
         method: 'POST',
@@ -82,8 +82,8 @@ export const removeLocalStorage = key => {
 };
 // autheticate user by pass data to cookie and localstorage
 export const authenticate = (data, next) => {
-    setCookie('token', data?.token);
-    setLocalStorage('user', data?.user);
+    setCookie('token', data.token);
+    setLocalStorage('user', data.user);
     next();
 };
 
